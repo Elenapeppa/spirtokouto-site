@@ -1,0 +1,62 @@
+backend:
+  name: github
+  repo: Elenapeppa/spirtokouto-site
+  branch: main
+
+media_folder: "public/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "content"
+    label: "Περιεχόμενο Site"
+    files:
+      - name: "site"
+        label: "Κείμενα, Media & Χρώματα"
+        file: "content/content.json"
+        fields:
+          - { label: "Hero Τίτλος", name: "hero.title", widget: "string" }
+          - { label: "Hero Υπότιτλος", name: "hero.subtitle", widget: "text" }
+          - label: "Υπηρεσίες – Εισαγωγή"
+            name: "servicesIntro"
+            widget: "text"
+          - label: "Υπηρεσίες"
+            name: "services"
+            widget: "list"
+            fields:
+              - { label: "Τίτλος", name: "title", widget: "string" }
+              - { label: "Περιγραφή", name: "desc", widget: "text" }
+          - label: "Φιλοσοφία (παράγραφοι)"
+            name: "philosophy.paragraphs"
+            widget: "list"
+            field: { label: "Παράγραφος", name: "paragraph", widget: "text" }
+          - { label: "ΣΠΙΘΑ – Εισαγωγή", name: "spark.intro", widget: "text" }
+          - label: "ΣΠΙΘΑ – Στοιχεία"
+            name: "spark.items"
+            widget: "list"
+            fields:
+              - { label: "Γράμμα", name: "letter", widget: "string" }
+              - { label: "Τίτλος", name: "title", widget: "string" }
+              - { label: "Κείμενο", name: "text", widget: "text" }
+          - label: "Βίντεο (YouTube embed URLs)"
+            name: "media.videos"
+            widget: "list"
+            fields:
+              - { label: "Τίτλος", name: "title", widget: "string" }
+              - { label: "URL (https://www.youtube.com/embed/...)", name: "url", widget: "string" }
+          - label: "Φωτογραφίες (ανέβασμα)"
+            name: "media.photos"
+            widget: "list"
+            field: { label: "Εικόνα", name: "image", widget: "image" }
+          - label: "Επικοινωνία"
+            name: "contact"
+            widget: "object"
+            fields:
+              - { label: "Email", name: "email", widget: "string" }
+              - { label: "Τηλέφωνο", name: "phone", widget: "string" }
+              - { label: "Πόλη", name: "city", widget: "string" }
+          - label: "Θέμα (Χρώματα)"
+            name: "theme"
+            widget: "object"
+            fields:
+              - { label: "Κύριο Χρώμα – Από", name: "primaryFrom", widget: "color", default: "#b91c1c" }
+              - { label: "Κύριο Χρώμα – Προς", name: "primaryTo", widget: "color", default: "#ef4444" }
